@@ -1,11 +1,11 @@
 import React from "react";
 import css from "./AdvertsList.module.css";
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 
 import AdvertsItem from "../AdvertsItem/AdvertsItem";
 
 const AdvertsList = ({ adverts }) => {
-
   return (
     <>
       <ul className={css.advertsList}>
@@ -15,6 +15,10 @@ const AdvertsList = ({ adverts }) => {
       </ul>
     </>
   );
+};
+
+AdvertsList.propTypes = {
+  adverts: PropTypes.array.isRequired,
 };
 
 export default AdvertsList;

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import css from "./ModalWindow.module.css";
 import { IoCloseOutline } from "react-icons/io5";
+import PropTypes from "prop-types";
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 const modalRoot = document.getElementById("modal-root");
 
@@ -34,7 +36,9 @@ const ModalWindow = ({ handleModalToggle, children }) => {
             className={css.iconClose}
             onClick={handleModalToggle}
           />
-          {children}
+          <Scrollbars style={{ width: 500, height: 650 }}>
+            {children}
+          </Scrollbars>
         </div>
       </div>
     </>,
@@ -42,4 +46,8 @@ const ModalWindow = ({ handleModalToggle, children }) => {
   );
 };
 
+ModalWindow.propTypes = {
+  handleModalToggle: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+};
 export default ModalWindow;

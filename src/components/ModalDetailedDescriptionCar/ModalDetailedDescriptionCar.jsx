@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./ModalDetailedDescriptionCar.module.css";
 import useDescriptionAdvert from "../../hooks/useDescriptionAdvert";
+import PropTypes from "prop-types";
 
 const ModalDetailedDescriptionCar = ({ advert }) => {
   const {
@@ -109,6 +110,10 @@ const ModalDetailedDescriptionCar = ({ advert }) => {
       </a>
     </>
   );
+};
+
+ModalDetailedDescriptionCar.propTypes = {
+  advert: PropTypes.object.isRequired,
 };
 
 export default ModalDetailedDescriptionCar;

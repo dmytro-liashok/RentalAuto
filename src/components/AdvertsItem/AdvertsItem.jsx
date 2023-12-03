@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import css from "./AdvertsItem.module.css";
 import useDescriptionAdvert from "../../hooks/useDescriptionAdvert";
 
@@ -93,4 +94,8 @@ const AdvertsItem = ({ advert }) => {
   );
 };
 
-export default AdvertsItem;
+AdvertsItem.propTypes = {
+  advert: PropTypes.object.isRequired,
+};
+
+export default React.memo(AdvertsItem);

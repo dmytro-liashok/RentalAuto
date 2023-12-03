@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import React from "react";
 import css from "./SearchBar.module.css";
 import brands from "../../sources/makes.json";
+import PropTypes from "prop-types";
 
 const SearchBar = ({ onFilter }) => {
   const formik = useFormik({
@@ -89,5 +90,10 @@ const SearchBar = ({ onFilter }) => {
     </form>
   );
 };
+
+SearchBar.propTypes = {
+  onFilter: PropTypes.func.isRequired,
+};
+
 
 export default SearchBar;

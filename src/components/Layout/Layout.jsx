@@ -5,8 +5,6 @@ import Container from "../Container/Container";
 import Loader from "../Loader/Loader";
 import css from "./Layout.module.css";
 
-// import css from "./Layout.module.css";
-
 const Layout = () => {
   return (
     <>

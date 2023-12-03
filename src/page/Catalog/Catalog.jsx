@@ -5,8 +5,6 @@ import { getAdverts } from "../../redux/adverts/advertsOperation";
 import useSelectors from "../../hooks/useSelectors";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import LoadMoreBtn from "../../components/LoadMoreBtn/LoadMoreBtn";
-// import { toast } from "react-toastify";
-// import notifyOptions from "../../utils/notifyOptions";
 
 const Catalog = () => {
   const { adverts, lengthAdverts } = useSelectors();
@@ -18,7 +16,6 @@ const Catalog = () => {
   }, [dispatch, brand]);
 
   const handleSubmit = (values) => {
-    console.log(values.brand);
     setBrand(values.brand);
   };
 
