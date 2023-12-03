@@ -10,6 +10,7 @@ const initialState = {
   adverts: [],
   isLoading: false,
   error: null,
+  lengthAdverts: null,
 };
 
 const advertsSlice = createSlice({

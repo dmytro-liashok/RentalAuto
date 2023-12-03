@@ -10,6 +10,7 @@ export const handleRejected = (state) => {
 
 export const handleFulfilled = (state, { payload }) => {
   state.adverts = [...state.adverts, ...payload];
+  state.lengthAdverts = payload.length;
   state.isLoading = false;
   state.error = null;
 };

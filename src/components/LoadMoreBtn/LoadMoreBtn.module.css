@@ -1,0 +1,14 @@
+.loadMoreBtnWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+.loadMoreBtn {
+  color: #3470ff;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+}
