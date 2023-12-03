@@ -9,7 +9,7 @@ const AdvertsList = ({ adverts }) => {
   return (
     <>
       <ul className={css.advertsList}>
-        {adverts.map((advert) => (
+        {adverts?.map((advert) => (
           <AdvertsItem advert={advert} key={nanoid()} />
         ))}
       </ul>

@@ -25,12 +25,8 @@ const AdvertsItem = ({ advert }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
 
-  const {
-    getCityFromAdress,
-    getRandomAccessory,
-    getCountryFromAdress,
-    isFavorite,
-  } = useDescriptionAdvert();
+  const { getCityFromAdress, getCountryFromAdress, isFavorite } =
+    useDescriptionAdvert();
 
   const handleModalToggle = () => {
     setIsModalOpen((prevState) => !prevState);
@@ -81,9 +77,7 @@ const AdvertsItem = ({ advert }) => {
             <li className={css.advertCarDescriptionItem}>{type}</li>
             <li className={css.advertCarDescriptionItem}>{make}</li>
             <li className={css.advertCarDescriptionItem}>{mileage}</li>
-            <li className={css.advertCarDescriptionItem}>
-              {getRandomAccessory(accessories)}
-            </li>
+            <li className={css.advertCarDescriptionItem}>{accessories[0]}</li>
           </ul>
           <button className={css.btnAdvert} onClick={handleModalToggle}>
             Learn more

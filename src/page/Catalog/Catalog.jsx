@@ -5,42 +5,28 @@ import { getAdverts } from "../../redux/adverts/advertsOperation";
 import useSelectors from "../../hooks/useSelectors";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import LoadMoreBtn from "../../components/LoadMoreBtn/LoadMoreBtn";
-import { toast } from "react-toastify";
-import notifyOptions from "../../utils/notifyOptions";
+// import { toast } from "react-toastify";
+// import notifyOptions from "../../utils/notifyOptions";
 
 const Catalog = () => {
-  const [page, setPage] = useState(1);
   const { adverts, lengthAdverts } = useSelectors();
+  const [brand, setBrand] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getAdverts(page)).then(() => {
-      handleTosifyLoadMore(lengthAdverts);
-    });
-  }, [dispatch, page, lengthAdverts]);
+    dispatch(getAdverts(brand));
+  }, [dispatch, brand]);
 
   const handleSubmit = (values) => {
-    console.log(values);
-  };
-
-  const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
-  };
-
-  const handleTosifyLoadMore = (lengthAdverts) => {
-    if (lengthAdverts >= 12) {
-      return;
-    }
-    if (lengthAdverts !== null) {
-      toast.info("No more adverts available.", notifyOptions);
-    }
+    console.log(values.brand);
+    setBrand(values.brand);
   };
 
   return (
     <>
       <SearchBar onFilter={handleSubmit} />
       <AdvertsList adverts={adverts} />
-      {lengthAdverts === 12 && <LoadMoreBtn handleLoadMore={handleLoadMore} />}
+      {lengthAdverts === 12 && <LoadMoreBtn onFilter={handleSubmit} />}
     </>
   );
 };
