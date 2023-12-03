@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunktest_task=self.webpackChunktest_task||[]).push([[81],{81:(e,s,a)=>{a.r(s),a.d(s,{default:()=>h});const t="Home_homePage__Zz8i3",c="Home_homeTitle__vlUOL";var l=a(184);const h=()=>(0,l.jsx)("div",{className:t,children:(0,l.jsx)("h1",{className:c,children:"Choose a car at RentalAuto"})})}}]);
-//# sourceMappingURL=81.fa19cc10.chunk.js.map
