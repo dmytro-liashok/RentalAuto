@@ -11,7 +11,6 @@ import { addToFavorites } from "../../redux/favorites/favoritesSlice.js";
 
 const AdvertsItem = ({ advert }) => {
   const {
-    id,
     img,
     make,
     model,
