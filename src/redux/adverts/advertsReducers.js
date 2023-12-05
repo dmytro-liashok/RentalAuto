@@ -9,15 +9,13 @@ export const handleRejected = (state) => {
 };
 
 export const handleFulfilledGetAdverts = (state, { payload }) => {
-  state.adverts = payload;
+  state.adverts = [...state.adverts, ...payload];
   state.lengthAdverts = payload.length;
   state.isLoading = false;
   state.error = null;
 };
 
-export const handleFulfilledAddAdverts = (state, { payload }) => {
-  state.adverts.push(...payload);
-  state.lengthAdverts = payload.length;
-  state.isLoading = false;
-  state.error = null;
+export const clearAdvertsReducer = (state) => {
+  state.adverts = [];
+  state.lengthAdverts = null;
 };
