@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import css from "./LoadMoreBtn.module.css";
-import { addAdverts } from "../../redux/adverts/advertsOperation";
-import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 
 const LoadMoreBtn = ({ handleLoadMore }) => {
   return (
@@ -15,6 +14,10 @@ const LoadMoreBtn = ({ handleLoadMore }) => {
       </button>
     </div>
   );
+};
+
+LoadMoreBtn.propTypes = {
+  handleLoadMore: PropTypes.func.isRequired,
 };
 
 export default LoadMoreBtn;
