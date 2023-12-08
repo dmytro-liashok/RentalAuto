@@ -6,12 +6,8 @@ import notifyOptions from "../../utils/notifyOptions";
 export const getAdverts = createAsyncThunk(
   "adverts/getAdverts",
   async (page, thunkAPI) => {
-    const limit = 12;
     try {
-      const { data } = await instance.get(
-        `/adverts?page=${page}&limit=${limit}`
-      );
-      console.log(data);
+      const { data } = await instance.get(`/adverts?page=${page}&limit=12`);
       return data;
     } catch (error) {
       toast.error(

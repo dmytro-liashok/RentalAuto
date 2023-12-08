@@ -42,6 +42,7 @@ const Catalog = () => {
   };
 
   const filteredAdverts = applyFilters(adverts, filtersValues);
+  console.log(filteredAdverts);
 
   return (
     <>
