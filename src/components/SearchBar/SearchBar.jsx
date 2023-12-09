@@ -2,9 +2,12 @@ import { useFormik } from "formik";
 import React from "react";
 import css from "./SearchBar.module.css";
 import brands from "../../sources/makes.json";
-import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { getAllAdverts } from "../../redux/adverts/advertsOperation";
+import { clearAdverts } from "../../redux/adverts/advertsSlice";
 
-const SearchBar = ({ onFilter }) => {
+const SearchBar = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       brand: "",
@@ -14,7 +17,8 @@ const SearchBar = ({ onFilter }) => {
     },
 
     onSubmit: (values) => {
-      onFilter(values);
+      dispatch(clearAdverts());
+      dispatch(getAllAdverts({ params: values }));
     },
   });
 
@@ -33,7 +37,7 @@ const SearchBar = ({ onFilter }) => {
           value={formik.values.carBrand}
           className={`${css.input} ${css.inputBrand}`}
         >
-          <option value="">Enter the text</option>
+          <option value="">All</option>
           {brands.map((brand) => (
             <option key={brand} value={brand}>
               {brand}
@@ -90,10 +94,5 @@ const SearchBar = ({ onFilter }) => {
     </form>
   );
 };
-
-SearchBar.propTypes = {
-  onFilter: PropTypes.func.isRequired,
-};
-
 
 export default SearchBar;

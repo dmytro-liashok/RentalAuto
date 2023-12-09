@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAdverts } from "./advertsOperation";
+import { getAdverts, getAllAdverts } from "./advertsOperation";
 import {
   clearAdvertsReducer,
   handleFulfilledGetAdverts,
+  handleFulfilledGetAllAdverts,
   handlePending,
   handleRejected,
 } from "./advertsReducers";
@@ -24,6 +25,9 @@ const advertsSlice = createSlice({
     builder.addCase(getAdverts.pending, handlePending);
     builder.addCase(getAdverts.rejected, handleRejected);
     builder.addCase(getAdverts.fulfilled, handleFulfilledGetAdverts);
+    builder.addCase(getAllAdverts.pending, handlePending);
+    builder.addCase(getAllAdverts.rejected, handleRejected);
+    builder.addCase(getAllAdverts.fulfilled, handleFulfilledGetAllAdverts);
   },
 });
 

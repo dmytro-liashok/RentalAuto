@@ -23,7 +23,7 @@ const AdvertsList = ({ adverts, handleLoadMore }) => {
 
 AdvertsList.propTypes = {
   adverts: PropTypes.array.isRequired,
-  handleLoadMore: PropTypes.func.isRequired,
+  handleLoadMore: PropTypes.func,
 };
 
 export default AdvertsList;

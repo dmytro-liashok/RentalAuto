@@ -15,6 +15,14 @@ export const handleFulfilledGetAdverts = (state, { payload }) => {
   state.error = null;
 };
 
+export const handleFulfilledGetAllAdverts = (state, { payload }) => {
+  console.log(payload);
+  state.adverts = [...payload];
+  state.lengthAdverts = payload.length;
+  state.isLoading = false;
+  state.error = null;
+};
+
 export const clearAdvertsReducer = (state) => {
   state.adverts = [];
   state.lengthAdverts = null;
