@@ -42,13 +42,13 @@ Home page is the main page that the user gets to when entering the application
 
 Catalog page is a central hub within the application where users can explore a diverse range of cars available for rental. The page features an intuitive filter system that allows users to refine their search based on car brands, providing a streamlined browsing experience. Each car listing includes a "Learn More" button. Clicking on this button opens a detailed description of the advertisement, allowing users to access in-depth information about the selected car. This detailed view provides specifications, features, and any additional information relevant to the rental.You can also add any ad to your favorites that will be displayed on the Favorites page.
 
-![Catalog Page](./assets/home.png)
+![Catalog Page](./)
 
 # Favorite
 
 The Favorite page is your personalized space within the application, allowing you to curate a collection of advertisements that have captured your interest. This feature empowers users to save and revisit their favorite listings for quick and easy reference.
 
-![Favorite Page](./assets/home.png)
+![Favorite Page](./)
 
 ## Live page
 
