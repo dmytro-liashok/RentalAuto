@@ -4,11 +4,8 @@ import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
 
 import AdvertsItem from "../AdvertsItem/AdvertsItem";
-import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
-import useSelectors from "../../hooks/useSelectors";
 
-const AdvertsList = ({ adverts, handleLoadMore }) => {
-  const { lengthAdverts } = useSelectors();
+const AdvertsList = ({ adverts }) => {
   return (
     <>
       <ul className={css.advertsList}>
@@ -16,14 +13,12 @@ const AdvertsList = ({ adverts, handleLoadMore }) => {
           <AdvertsItem advert={advert} key={nanoid()} />
         ))}
       </ul>
-      {lengthAdverts === 12 && <LoadMoreBtn handleLoadMore={handleLoadMore} />}
     </>
   );
 };
 
 AdvertsList.propTypes = {
   adverts: PropTypes.array.isRequired,
-  handleLoadMore: PropTypes.func.isRequired,
 };
 
 export default AdvertsList;
